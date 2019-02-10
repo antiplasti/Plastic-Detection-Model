@@ -18,11 +18,11 @@ def health_check():
 def detect():
 
     # Converts bytes, received via request, to Pillow Image Object
-    pil_img = Image.open(request.files['file'])
+    imgBytes = Image.open(request.data)
     print("successfully receieved image")
     
     # Pass image bytes to classifier
-    result = classify.analyse(pil_img)
+    result = classify.analyse(imgBytes)
 
     # Return results as neat JSON object, using 
     result = jsonify(result)

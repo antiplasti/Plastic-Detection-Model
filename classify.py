@@ -7,9 +7,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import tensorflow as tf
 
 
-def analyse(image_data):
+def analyse(imageObj):
     # Read the image_data
-    # image_data = tf.gfile.FastGFile(image_path, 'rb').read()
+    image_data = tf.gfile.FastGFile(imageObj, 'rb')
 
     # Loads label file, strips off carriage return
     label_lines = [line.rstrip() for line 
