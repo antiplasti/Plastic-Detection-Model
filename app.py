@@ -30,7 +30,6 @@ def detect():
 
     # Return results as neat JSON object, using 
     print(result)
-    return result
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
