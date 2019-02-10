@@ -11,7 +11,7 @@ def postImg():
 
     response = requests.post(
 		"http://174.138.58.241/detect",
-		data=imageFile
+		data=imageBytes
 	)
     print(response)
     # utilData = response.json()
