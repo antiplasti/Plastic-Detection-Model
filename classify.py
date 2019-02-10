@@ -34,6 +34,6 @@ def analyse(imageObj):
         for node_id in top_k:
             human_string = label_lines[node_id]
             score = predictions[0][node_id]
-            obj[human_string] = score
+            obj[human_string] = float(score)
         
         return obj

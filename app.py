@@ -30,7 +30,7 @@ def detect():
     result = classify.analyse("temp.png")
 
     # Return results as neat JSON object, using 
-    result = jsonify(json.dumps(result))
+    result = jsonify(result)
     print(result)
     return result
 
