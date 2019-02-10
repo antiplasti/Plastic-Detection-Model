@@ -41,6 +41,7 @@ def detect():
     db = firebase.Firebase()
     db.authenticate()
     db.push(response_data)
+    print("Updated Firebase.")
 
     return result
 
