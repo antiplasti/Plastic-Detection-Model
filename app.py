@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 import classify
 import base64
+import json
 
 # Instantiate Flask
 app = Flask(__name__)
@@ -29,7 +30,7 @@ def detect():
     result = classify.analyse("temp.png")
 
     # Return results as neat JSON object, using 
-    result = jsonify(result)
+    result = jsonify(json.dumps(result))
     print(result)
     return result
 
