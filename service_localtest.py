@@ -3,18 +3,18 @@ import io
 
 def postImg():
 
-    imgPath = "@testing.png"    
+    imgPath = "testing.png"    
+    imgObj = {'file': open(imgPath, 'rb')}
     response = requests.post(
 		"http://174.138.58.241/detect",
-		files=imgPath
+		files=imgObj
 	)
-	
-    utilData = response.json()
-    print(utilData)
+    print(response)
+    # utilData = response.json()
+    # print(utilData)
             
 def main():
-    while True:
-        postImg()
+    postImg()
 
 if __name__ == '__main__':
     main()
