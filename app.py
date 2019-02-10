@@ -31,7 +31,7 @@ def detect():
 
     # Return results as neat JSON object, using 
     result = jsonify(result)
-    print(result.json())
+    print(result.json)
     return result
 
 if __name__ == '__main__':

@@ -14,7 +14,7 @@ def postImg():
 		data=imageBytes
 	)
     print("Response received!")
-    response_data = response.json()
+    response_data = response.json
     print(response_data)
     # utilData = response.json()
     # print(utilData)
