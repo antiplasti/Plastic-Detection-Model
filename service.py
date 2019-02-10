@@ -2,27 +2,28 @@ import requests
 import picamera
 import io
 import time
+import base64
+
+imagePath = "temp.png"
 
 def postImg():
-    
-    imgBytes = io.BytesIO()
 	
     with picamera.PiCamera() as camera:
         time.sleep(2)
-        camera.campture(imgBytes, 'jpeg')
+        camera.capture(imagePath)
+        camera.close()
     
-    headers = {
-        'content-type': 'image/jpeg'
-    }
+    imageFile = open(imagePath, "rb")
+    imageBytes = base64.b64encode(imageFile.read())
     
     response = requests.post(
 		"http://174.138.58.241/detect",
-		data=imgBytes,
-		headers=headers
+		data=imageBytes
 	)
 	
-    utilData = response.json()
-    print(utilData)
+    print("Response received!")
+    response_data = response.json()
+    print(response_data)    
             
 def main():
     while True:

@@ -10,10 +10,12 @@ def postImg():
     imageBytes = base64.b64encode(imageFile.read())
 
     response = requests.post(
-		"http://127.0.0.1/detect",
+		"http://174.138.58.241/detect",
 		data=imageBytes
 	)
-    print(response)
+    print("Response received!")
+    response_data = response.json()
+    print(response_data)
     # utilData = response.json()
     # print(utilData)
             
