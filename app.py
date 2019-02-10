@@ -18,7 +18,7 @@ def health_check():
 def detect():
 
     # Converts bytes, received via request, to Pillow Image Object
-    imgBytes = Image.open(request.data)
+    imgBytes = request.data
     print("successfully receieved image")
     
     # Pass image bytes to classifier
