@@ -17,6 +17,8 @@ Make sure you have [Python 3](https://www.python.org/downloads/) installed, then
 
 ## Usage
 
+Our team, Anti Plasti used to detect images of plastics, garbage, metal, paper, glass and cardboard in the ocean to allow for the collection and reduction of these materials, particularly plastic, in the ocean waters.
+
 ### Prepare the image data sets
 In order to start the transfer learning process, a folder named ``training_dataset`` needs to be created in the root of the project folder. This folder will contain the image data sets for all the subjects, for whom the classification is to be performed.
 
@@ -29,20 +31,20 @@ Create the ``training_dataset`` folder and add the images for all the data sets 
 ---- /training_dataset
 |    |
 |    |
-|    ---- /arun
-|    |    arun1.jpg
-|    |    arun2.jpg
+|    ---- /plastics
+|    |    plastic1.jpg
+|    |    plastic2.jpg
 |    |    ...
 |    |
 |    |
-|    ---- /erica
-|         erica1.jpg
-|         erica2.jpg
+|    ---- /paper
+|         paper1.jpg
+|         paper2.jpg
 |         ...
 |
 |     
 ```
-This enables classification of images between the ``arun`` and ``erica`` data sets.
+This enables classification of images between the ``plastics`` and ``paper`` data sets.
 
 > Make sure to include multiple variants of the subject (side profiles, zoomed in images etc.), the more the images, the better is the result.
 
@@ -61,21 +63,18 @@ The ``training summaries``, ``retrained graphs`` and ``retrained labels`` will b
 ### Classify objects
 
 ```javascript
-python3 classify.py
+python classify.py
 ```
 
 This opens up the file dialog using which you can select your input file.
 
-<img src="https://raw.githubusercontent.com/ArunMichaelDsouza/tensorflow-image-detection/master/file-dialog.png"/>
+<img src="https://imgur.com/LPXrKe8"/>
 
 Once the input file is selected, the classifier will output the predictions for each data set. A prediction score between ``0.8`` to ``1`` is considered to be optimal.
 
-<img src="https://raw.githubusercontent.com/ArunMichaelDsouza/tensorflow-image-detection/master/cli-output.png"/>
+<img src="https://imgur.com/zuFXTRb"/>
 
 <br/>
-
-## Results
-<img src="https://raw.githubusercontent.com/ArunMichaelDsouza/tensorflow-image-detection/master/result.png"/>
 
 <br/>
 
@@ -83,6 +82,8 @@ Once the input file is selected, the classifier will output the predictions for 
 
 | [<img src="https://avatars3.githubusercontent.com/u/4924614" width="100px;"/><br /><sub><b>Arun Michael Dsouza</b></sub>](https://github.com/ArunMichaelDsouza)<br />| [<img src="https://avatars3.githubusercontent.com/u/11679543" width="100px;"/><br /><sub><b>Royal Bhati</b></sub>](https://github.com/royalbhati)<br />|
 | :---: | :---: |
+
+[Many thanks for the Dataset which was obtained from this Git project](https://github.com/garythung/trashnet)
 
 <br/>
 
