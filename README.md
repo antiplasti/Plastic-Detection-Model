@@ -72,7 +72,7 @@ This opens up the file dialog using which you can select your input file.
 
 Once the input file is selected, the classifier will output the predictions for each data set. A prediction score between ``0.8`` to ``1`` is considered to be optimal.
 
-<img src="https://imgur.com/zuFXTRb">
+<img src="https://i.imgur.com/zuFXTRb.jpg">
 
 <br/>
 
