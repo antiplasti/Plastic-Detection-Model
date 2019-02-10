@@ -7,7 +7,7 @@ class Firebase:
     def __init__(self):
         pass
 
-    def authenticate(self, auth_cred):
+    def authenticate(self):
         self.firebase = pyrebase.initialize_app(
             {
                 "apiKey": auth_cred["API_KEY"],
@@ -23,4 +23,4 @@ class Firebase:
         
     def push(self, result):
 
-        self.db.child("anti-plasti").child("dummy").child(auth_cred["B_ID"]).update({"current_result": result, "last_updated": str(datetime.datetime.now())}, self.user["idToken"])
+        self.db.child("dummy").child(auth_cred["B_ID"]).update({"current_result": result, "last_updated": str(datetime.datetime.now())}, self.user["idToken"])

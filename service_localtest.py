@@ -1,6 +1,8 @@
 import requests
 import io
 import base64
+import firebase
+import env
 
 def postImg(): 
     
@@ -14,10 +16,12 @@ def postImg():
 		data=imageBytes
 	)
     print("Response received!")
-    response_data = response.json
+    response_data = response.json()
     print(response_data)
-    # utilData = response.json()
-    # print(utilData)
+    
+    db = firebase.Firebase()
+    db.authenticate()
+    db.push(response_data)
             
 def main():
     postImg()
