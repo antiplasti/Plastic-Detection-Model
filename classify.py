@@ -9,7 +9,7 @@ import tensorflow as tf
 
 def analyse(imageObj):
     # Read the image_data
-    image_data = tf.gfile.FastGFile(imageObj, 'rb')
+    image_data = tf.gfile.FastGFile(imageObj, 'rb').read()
 
     # Loads label file, strips off carriage return
     label_lines = [line.rstrip() for line 

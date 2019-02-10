@@ -1,7 +1,7 @@
-from PIL import Image
+# Digital OCEAN FLASK SERVER RECEIVES IMAGE
 from flask import Flask, request, jsonify
-from io import BytesIO
 import classify
+import base64
 
 # Instantiate Flask
 app = Flask(__name__)
@@ -17,12 +17,16 @@ def health_check():
 @app.route('/detect', methods=["POST"])
 def detect():
 
-    # Converts bytes, received via request, to Pillow Image Object
     imgBytes = request.data
+
+    imgdata = base64.b64decode(imgBytes)
+    with open("temp.png", 'wb') as f:
+        f.write(imgdata)
+
     print("successfully receieved image")
     
     # Pass image bytes to classifier
-    result = classify.analyse(imgBytes)
+    result = classify.analyse("temp.png")
 
     # Return results as neat JSON object, using 
     result = jsonify(result)

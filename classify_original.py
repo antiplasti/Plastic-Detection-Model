@@ -6,7 +6,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import tensorflow as tf
 
-image_path = sys.argv[1]
+image_path = "testing.png"
 
 if image_path:
     
