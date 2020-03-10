@@ -12,7 +12,7 @@ def postImg():
     imageBytes = base64.b64encode(imageFile.read())
 
     response = requests.post(
-        "http://guarded-badlands-38494.herokuapp.com/detect",
+        "http://waste-classifier-api.herokuapp.com/detect",
         data=imageBytes
     )
     print("Response received!")
