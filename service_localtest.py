@@ -4,27 +4,29 @@ import base64
 import firebase
 import env
 
-def postImg(): 
-    
+
+def postImg():
     imagePath = "Litter.jpg"
     imageFile = open(imagePath, "rb")
 
     imageBytes = base64.b64encode(imageFile.read())
 
     response = requests.post(
-		"http://127.0.0.1/detect",
-		data=imageBytes
-	)
+        "http://guarded-badlands-38494.herokuapp.com/detect",
+        data=imageBytes
+    )
     print("Response received!")
     response_data = response.json()
     print(response_data)
-    
+
     db = firebase.Firebase()
     db.authenticate()
     db.push(response_data)
-            
+
+
 def main():
     postImg()
+
 
 if __name__ == '__main__':
     main()
