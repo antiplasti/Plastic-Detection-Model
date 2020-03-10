@@ -6,13 +6,13 @@ import env
 
 def postImg(): 
     
-    imagePath = "testing.png"
+    imagePath = "Litter.jpg"
     imageFile = open(imagePath, "rb")
 
     imageBytes = base64.b64encode(imageFile.read())
 
     response = requests.post(
-		"http://174.138.58.241/detect",
+		"http://127.0.0.1/detect",
 		data=imageBytes
 	)
     print("Response received!")
