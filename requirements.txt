@@ -3,7 +3,6 @@ numpy==1.18.1
 oauth==1.0.1
 oauth2client==3.0.0
 Pyrebase==3.0.27
-system-service==0.3
 systemd-python==234
 tensorboard==1.14.0
 tensorflow==1.14.0
