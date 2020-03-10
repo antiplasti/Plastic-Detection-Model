@@ -17,7 +17,7 @@ def postImg():
     )
     print("Response received!")
     response_data = response.json()
-    print(response_data)
+    print(response)
 
     db = firebase.Firebase()
     db.authenticate()

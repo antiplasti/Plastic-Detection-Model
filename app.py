@@ -38,9 +38,8 @@ def detect():
     print(result.json)
 
     response_data = result.json
-    print(response_data)
 
-    return result
+    return response_data
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=os.environ['PORT'], debug=True)
