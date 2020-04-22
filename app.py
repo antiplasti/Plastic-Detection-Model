@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 import classify
 import base64
 import os
+import gc
 
 import json
 import firebase
