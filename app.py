@@ -21,7 +21,7 @@ def health_check():
 # Performing image Recognition on Image, sent as bytes via POST payload
 @app.route('/detect', methods=["POST"])
 def detect():
-
+    gc.collect()
     imgBytes = request.data
 
     imgdata = base64.b64decode(imgBytes)
@@ -32,14 +32,13 @@ def detect():
     
     # Pass image bytes to classifier
     result = classify.analyse("temp.png")
-
+	
     # Return results as neat JSON object, using 
     result = jsonify(result)
     print(result.json)
 
     response_data = result.json
-
+    
     return response_data
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.environ['PORT'], debug=True)
+    app.run(host='0.0.0.0', port=os.environ['PORT'], debug=False)
