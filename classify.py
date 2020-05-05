@@ -7,6 +7,10 @@ os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import tensorflow as tf
 
 def init():
+    global sess
+    global softmax_tensor
+    global label_lines
+
     # Loads label file, strips off carriage return
     label_lines = [line.rstrip() for line
                    in tf.gfile.GFile("tf_files/retrained_labels.txt")]
@@ -20,10 +24,6 @@ def init():
     with tf.Session() as sess:
         # Feed the image_data as input to the graph and get first prediction
         softmax_tensor = sess.graph.get_tensor_by_name('final_result:0')
-    global sess
-    global softmax_tensor
-    global label_lines
-
 
 def analyse(imageObj):
     # Read the image_data
