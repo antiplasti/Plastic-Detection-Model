@@ -44,5 +44,10 @@ def detect():
     return response_data
 if __name__ == '__main__':
     init()
-    app.run(host='0.0.0.0', port=os.environ['PORT'], debug=False)
+    try:
+        port = os.environ['PORT']
+    except:
+        port = "8080"
+
+    app.run(host='0.0.0.0', port=port, debug=True)
 
