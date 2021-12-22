@@ -22,7 +22,7 @@ Our team, Anti Plasti used to detect images of plastics, garbage, metal, paper, 
 ### Prepare the image data sets
 In order to start the transfer learning process, a folder named ``training_dataset`` needs to be created in the root of the project folder. This folder will contain the image data sets for all the subjects, for whom the classification is to be performed.
 
-[Download the Datasets here](https://drive.google.com/drive/folders/0B3P9oO5A3RvSUW9qTG11Ul83TEE)
+[Download the Datasets here](https://bit.ly/3mcb3aS)
 
 Create the ``training_dataset`` folder and add the images for all the data sets in the following manner -
 
@@ -44,7 +44,7 @@ Create the ``training_dataset`` folder and add the images for all the data sets 
 |         paper2.jpg
 |         ...
 |
-|     
+|
 ```
 This enables classification of images between the ``plastics`` and ``paper`` data sets.
 
@@ -112,4 +112,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
